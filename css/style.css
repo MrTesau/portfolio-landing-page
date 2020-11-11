@@ -1,0 +1,323 @@
+/* Said to be included on all css ?? */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*Root CSS rules */
+/* Custom Properties */
+:root {
+    /* Custom properties -> need duble hyphen */
+    /* font families */
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    /* font weight */
+    --fw-reg: 300;
+    --fw-md: 500;
+    --fw-bold:900;
+    /* custom colors */
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    /*Font size */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25 rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.125em rgba(0,0,0,.15);
+}
+/* At a specific size change the custom sizes to below */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.755rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+
+    }
+}
+
+/* General Styles */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+nav {
+    display: none;
+}
+
+section {
+    padding: 5em 2em;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+strong {
+    font-weight: var(--fw-bold);
+}
+/* link to my work  */
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    /* set settings for hover effect */
+    transition: transform 200ms ease-in-out;
+
+}
+/* set hover effect */
+.btn:hover {
+    transform: scale(1.1);
+}
+/* TYPOGRAPHY */
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+.section__title {
+    margin-bottom: 0.25em;
+    
+}
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+/* pushes strong element onto its own line */
+.section__title--intro strong{
+    display: block;
+}
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+background: var(--clr-accent);
+padding: .25em;
+padding-right: 1em;
+font-family: var(--ff-secondary);
+margin-bottom: 1em;
+}
+
+/* Intro Section */
+
+.intro {
+    position: relative;
+}
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em; 
+        grid-template-areas:
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    .intro__img {
+        grid-area: img;
+        min-width: 300px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.section__subtitle--intro {
+    align-self: start;
+    grid-column: -1 / 1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+
+}
+
+/* WHAT I DO */
+.my-services {
+    background-color : var(--clr-dark);
+    background-image: url(../img/bg1.jpg);
+    color: var(--clr-light);
+    background-blend-mode: multiply;
+    background-size: cover;
+    text-align: center;
+
+    /* Find out how to align width with above container */
+}
+
+/* 
+An element with position: static; is not positioned in any special way;
+ it is always positioned according to the normal flow of the page:
+
+An element with position: relative; is positioned relative to its normal position. (static = normal position)
+*/
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+/* pseudo element */
+/* creates the little line underneath the title */
+.section__title--services::after {
+   content: "";
+   display: block;
+   width: 20%;
+   height: 1.5px;
+   margin: 0.5em auto 1em;
+   background: var(--clr-light);
+   opacity: 0.25;
+}
+.services {
+    margin-bottom: 4em;
+}
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.section__about__me {
+    font-weight: var(--fw-md);
+}
+
+/* at 800px + set children of services to break into flex boxes */
+/* This Could be useful for my App Dashboard layout (graphs) */
+@media (min-width: 600px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* set a margin between 2 child services */
+    .service + .service {
+        margin-left: 2em;
+    }
+}
+
+/* ABOUT ME */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+        "title img"
+        "subtitle img"
+        "text img";
+        grid-column-gap: 2em;
+    }
+    .section__title--about {
+      grid-area: title;
+    }
+    .section__subtitle--about {
+        grid-column: 1/-1; /* goes from 1 side all the way to other side of grid (horizontally) */
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+    .about-me__img {
+       grid-area: img;
+       position: relative;
+       z-index: 2;
+    }
+}
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+/* Create hover effect on portfolio items */
+.portfolio__item {
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+.portfolio__img {
+    transition:
+    transform 750ms cubic-bezier(0.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+.portfolio__img:hover {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 3.5em 0;
+}
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+ }
+.footer__link {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 0.5em;
+}
