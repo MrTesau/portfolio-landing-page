@@ -1,326 +1,194 @@
-<!---
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tayyib Esau's Portfolio</title>
-    <link type="text/css" rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
     <!-- Add additional stylesheets next -->
-    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="logo">
-            <!-- <img src="img/me.jpg" alt=""> -->
-        </div>
-        <!---  <button class="nav-toggle" aria-label="toggle-navigation"><span class="hamburger">Dev Mr T</span></button> -->
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="/css/logo.png" alt="" />
+      </div>
+      <!---  <button class="nav-toggle" aria-label="toggle-navigation"><span class="hamburger">Dev Mr T</span></button> -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">My Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About Me</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- INTRO SECTION -->
     <section class="intro" id="home">
-        <!--Note Modifier class(intro)-->
-        <h1 class="section__title section__title--intro">Hi, I am <Strong>Tayyib Esau</Strong></h1>
-        <p class="section__subtitle section__subtitle--intro">Web Developer</p>
-        <img src="img/me.jpg" class="intro__img">
+      <!--Note Modifier class(intro)-->
+      <h1 class="section__title section__title--intro">
+        Hi, I am <strong>Tayyib Esau</strong>
+      </h1>
+      <p class="section__subtitle section__subtitle--intro">Web Developer</p>
+      <img src="img/me.jpg" class="intro__img" />
     </section>
-
 
     <!-- My Services -->
     <section class="my-services" id="services">
-        <h2 class="section__title section__title--services">What I Do</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Html, CSS, Javascript</h3>
-                <p class="section__about__me">As the building blocks of the modern internet my journey into web
-                    development began, predictably,
-                    here. I quickly built a resume of basic projects which showcase my growing skills. I credit my
-                    continued
-                    motivation to improve in this field to the unique and engaging challenges mastering javascript
-                    entails.
-                </p>
-            </div>
-            <div class="service">
-                <h3>React </h3>
-                <p class="section__about__me"> Learning javascript was when my love for web development truly began.
-                    Quickly however I discovered
-                    React and decided
-                    to focus the majority of my effort into mastering this library/framework(depending who you ask!). My
-                    portfolio includes
-                    many basic applications, showcasing my skillset, as well as larger projects I have been a part of.
-                </p>
-            </div>
-            <div class="service">
-                <h3>Backend</h3>
-                <p class="section__about__me">As an aspiring full stack developer I have some experience with backend
-                    systems.
-                    My portfolio includes courses and projects I have completed using node.js (express) as well as
-                    some experience working with databases (MongoDB & MySQL).
-                </p>
-            </div>
+      <h2 class="section__title section__title--services">What I Do</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Html, CSS, Javascript</h3>
+          <p class="section__about__me">
+            As the building blocks of the modern internet my journey into web
+            development began, predictably, here. I quickly built a resume of
+            basic projects which showcase my growing skills. I credit my
+            continued motivation to improve in this field to the unique and
+            engaging challenges mastering javascript entails.
+          </p>
         </div>
-        <a href="#work" class="btn">See my work</a>
+        <div class="service">
+          <h3>React</h3>
+          <p class="section__about__me">
+            Learning javascript was when my love for web development truly
+            began. Quickly however I discovered React and decided to focus the
+            majority of my effort into mastering this
+            library/framework(depending who you ask!). My portfolio includes
+            many basic applications, showcasing my skillset, as well as larger
+            projects I have been a part of.
+          </p>
+        </div>
+        <div class="service">
+          <h3>Backend</h3>
+          <p class="section__about__me">
+            As an aspiring full stack developer I have some experience with
+            backend systems. My portfolio includes courses and projects I have
+            completed using node.js (express) as well as some experience working
+            with databases (MongoDB & MySQL).
+          </p>
+        </div>
+      </div>
+      <a href="#work" class="btn">See my work</a>
     </section>
 
     <!-- About Me -->
     <section class="about-me" id="about">
-        <h2 class="section__title section__title--about">Who I am</h2>
-        <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">
+        About Me & Previous Work History
+      </p>
 
-        <div class="about-me__body">
-            <p>
-                After attending high school at Kaipara College, I travelled to South Africa and completed a year of
-                community
-                work at Vista High School.
-                The majority of my time was spent assisting in the creation of a gym and fitness
-                center for in need students at the local high school in the area of my birth.
-                Returning back to New Zealand I began work as a farm hand at Japonica gardens before beginning tertiary
-                education at Otago University. While completing my bachelor of Science I developed an interest in
-                computer
-                programming
-                after being exposed to the language R, used in statistical analysis during laboratory exercises.
-                This combined with my innate interest in the internet naturally led me to the wed development field.
-                After Graduating in 2016 I took up several jobs while continuing to build my skills as a freelance web
-                developer.
-                I started building basic websites using wordpress but quickly began to move to learning HTML and CSS.
-                Completing several online courses I eventually found and learnt to love JavaScript and in particular the
-                library/framework REACT.
-            </p>
-            <h4> Previous Position: May 2018 – October 2020: <br>
-                Research and Development Drillers Assistant, Flexidrill Palmerston
-            </h4>
-            <p>
-                My responsibilities include trialing innovative new mineral exploration solutions for future production.
-                This consists of testing in both controlled environments and in the field.
-                Collection, measurement, recording and presentation of mineral core samples
-                in conjunction with a team of geologists for a possible future mineral extraction site.
-                Viscosity testing and flow management of various polymer drilling fluid solutions.
-                IT support for data collection of drilling speed, tool trial performance and core sample recovery
-                information(excel).
-                General maintenance of site machinery, rigs, solids removal units, drilling rods, pumps and platforms.
-            </p>
-        </div>
-        <img src="img/who1.jpg" class="about-me__img">
+      <div class="about-me__body">
+        <p>
+          After attending high school at Kaipara College, I travelled to South
+          Africa and completed a year of community work at Vista High School.
+          The majority of my time was spent assisting in the creation of a gym
+          and fitness center for in need students at the local high school in
+          the area of my birth. Returning back to New Zealand I began work as a
+          farm hand at Japonica gardens before beginning tertiary education at
+          Otago University. While completing my bachelor of Science I developed
+          an interest in computer programming after being exposed to the
+          language R, used in statistical analysis during laboratory exercises.
+          This combined with my innate interest in the internet naturally led me
+          to the wed development field. After Graduating in 2016 I took up
+          several jobs while continuing to build my skills as a freelance web
+          developer. I started building basic websites using wordpress but
+          quickly began to move to learning HTML and CSS. Completing several
+          online courses I eventually found and learnt to love JavaScript and in
+          particular the library/framework REACT.
+        </p>
+        <h4>
+          Previous Position: May 2018 – October 2020: <br />
+          Research and Development Drillers Assistant, Flexidrill Palmerston
+        </h4>
+        <p>
+          My responsibilities include trialing innovative new mineral
+          exploration solutions for future production. This consists of testing
+          in both controlled environments and in the field. Collection,
+          measurement, recording and presentation of mineral core samples in
+          conjunction with a team of geologists for a possible future mineral
+          extraction site. Viscosity testing and flow management of various
+          polymer drilling fluid solutions. IT support for data collection of
+          drilling speed, tool trial performance and core sample recovery
+          information(excel). General maintenance of site machinery, rigs,
+          solids removal units, drilling rods, pumps and platforms.
+        </p>
+      </div>
+      <img src="img/who1.jpg" class="about-me__img" />
     </section>
 
     <!-- My WORK -->
     <section class="my-work" id="work">
-        <h2 class="section__title section__title--about">My Work</h2>
-        <p class="section__subtitle section__subtitle--work">A selection of my projects</p>
-        <div class="portfolio">
-            <!-- Port Image!! -->
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-            <!-- Port Image!! -->
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-            <!-- Port Image!! -->
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-            <!-- Port Image!! -->
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-            <a href="#" class="portfolio__item">
-                <img src="img/bg.jpeg" alt="" class="portfolio__img">
-            </a>
-
-        </div>
-        <!--- <img src="img/me.jpg"> -->
+      <h2 class="section__title section__title--about">My Work</h2>
+      <p class="section__subtitle section__subtitle--work">
+        A selection of my projects
+      </p>
+      <div class="portfolio">
+        <!-- Port Image!! -->
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+        <!-- Port Image!! -->
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+        <!-- Port Image!! -->
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+        <!-- Port Image!! -->
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+        <a href="#" class="portfolio__item">
+          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
+        </a>
+      </div>
+      <!--- <img src="img/me.jpg"> -->
     </section>
 
     <footer class="footer">
-        <a href="mailto:esamu161@gmail.com" class="footer__link">esamu161@gmail.com</a>
-        <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="https://codepen.io/your-work"><i class="fab fa-github"></i></a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link"><i class="fab fa-facebook"></i></a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link"><i class="fab fa-free-code-camp"></i></a>
-            </li>
-        </ul>
+      <a href="mailto:esamu161@gmail.com" class="footer__link"
+        >esamu161@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://codepen.io/your-work"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li class="social-list__item">
+          <a class="social-list__link"><i class="fab fa-free-code-camp"></i></a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>
-
-
- <header>
-<nav>
-  <ul>
-    <li class="active"><a href="#home">Home</a></li>
-    <li><a href="#services">What I do</a></li>
-    <li><a href="#projects">About Me</a></li>
-    <li class=""><a href="#projects">My Work</a></li>
-  </ul>
-</nav>
-    </header>
-  <!-- INTRO SECTION -->
-<div class="intro-bg typography" id="welcome-section">
-    <section class="intro" id="home">  
-        <div class="svg-wrapper">
-         <svg height="60" width="520" xmlns="http://www.w3.org/2000/svg">
-           <rect class="shape" height="60" width="520" />
-           <div class="text-head">Hello There! I am Tayyib Esau</div>
-         </svg>
-       </div>
-        <h1 class="section__subtitle section__subtitle--intro">Freelance Web Developer</h1>
-        <img src="https://mrtwebd.netlify.app/img/me.jpg" class="intro__img">
-        
-    </section>
-</div>
-  <!-- My Services -->
-<section class="my-services typography" id="services">
-        <h2 class="section__title section__title--services">What I Do</h2>
-        <div class="services">
-            <div class="service">
-                <h3>Html, CSS, Javascript</h3>
-                <p class="section__about__me">As the building blocks of the modern internet my journey into web
-                    development began, predictably,
-                    here. I quickly built a resume of basic projects which showcase my growing skills. I credit my
-                    continued
-                    motivation to improve in this field to the unique and engaging challenges mastering javascript
-                    entails.
-                </p>
-            </div>
-            <div class="service">
-                <h3>Front-End Frameworks </h3>
-                <p class="section__about__me"> Learning javascript was when my love for web development truly began.
-                    Quickly however I discovered
-                    React and decided
-                    to focus the majority of my effort into mastering this library/framework(depending who you ask!). My
-                    portfolio includes
-                    many basic applications, showcasing my skillset, as well as larger projects I have been a part of.
-                </p>
-            </div>
-            <div class="service">
-                <h3>Backend</h3>
-                <p class="section__about__me">As an aspiring full stack developer I have some experience with backend
-                    systems.
-                    My portfolio includes courses and projects I have completed using node.js (express) as well as
-                    some experience working with databases (MongoDB & MySQL).
-                </p>
-            </div>
-        </div>
-        <a href="#work" class="btn">See my work</a>
-    </section>
- <!-- About Me -->
-<section class="about-me" id="about">
-        <h2 class="section__title section__title--about">Who I am</h2>
-        <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
-
-        <div class="about-me__body">
-            <p>
-                After attending high school at Kaipara College, I travelled to South Africa and completed a year of
-                community
-                work at Vista High School.
-                The majority of my time was spent assisting in the creation of a gym and fitness
-                center for in need students at the local high school in the area of my birth.<br>
-                Returning back to New Zealand I began work as a farm hand at Japonica gardens before beginning tertiary
-                education at Otago University. While completing my bachelor of Science I developed an interest in
-                computer
-                programming
-                after being exposed to the language R, used in statistical analysis during laboratory exercises.
-                This combined with my innate interest in the internet naturally led me to the wed development field.<br>
-                After Graduating in 2016 I took up several jobs while continuing to build my skills as a freelance web
-                developer.
-                I started building basic websites using wordpress but quickly began to move to learning HTML and CSS.
-                Completing several online courses I eventually found and learnt to love JavaScript and in particular the
-                library/framework REACT.
-            </p>
-            <h4> Previous Position: May 2018 – October 2020: <br>
-                Research and Development Drillers Assistant, Flexidrill Palmerston
-            </h4>
-            <p>
-                My responsibilities include trialling innovative new mineral exploration solutions for future production.
-                This consists of testing in both controlled environments and in the field.
-                Collection, measurement, recording and presentation of mineral core samples
-                in conjunction with a team of geologists for a possible future mineral extraction site.
-                Viscosity testing and flow management of various polymer drilling fluid solutions.
-                IT support for data collection of drilling speed, tool trial performance and core sample recovery
-                information(excel).
-                General maintenance of site machinery, rigs, solids removal units, drilling rods, pumps and platforms.
-            </p>
-        </div>
-        <img src="https://mrtwebd.netlify.app/img/who1.jpg" class="about-me__img">
-    </section>
- <section class="work" id="projects"> 
- <p class="section__subtitle section__subtitle--work">A selection of my projects:</p>
-<div class="wrap">
-<div class="tile"> 
-  <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-<div class="tile"> 
-  <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-  <div class="tile"> 
-  <img src='https://assets.codepen.io/4163750/internal/screenshots/pens/BajWJNK.default.png?fit=cover&format=auto&ha=true&height=360&quality=75&v=2&version=1605135101&width=640'/>
-  <div class="text">
-  <h1>Lorem ipsum.</h1>
-  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
-  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
-</div> 
-</section>
-<footer class="footer">
-        <a href="mailto:esamu161@gmail.com" class="footer__link">esamu161@gmail.com</a>
-        <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="https://github.com/MrTesau">Github&nbsp  <i class="fab fa-github"></i></a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link">Twitter<i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link" href="https://codepen.io/mrtesau">CodePen</i></a>
-            </li>
-            <li class="social-list__item"><a id="profile-link" target="_blank" class="social-list__link" href="https://www.freecodecamp.org/mrtesau">CodeCamp&nbsp<i class="fab fa-free-code-camp"></i></a>
-            </li>
-        </ul>
-    </footer>
