@@ -14,181 +14,287 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() { 
+$(function() {
+  $('.shape').addClass("shape-border");
+  $('.svg-wrapper').click(function() {
+    $('.shape').toggleClass('shape-border');
+  });
+});
+// Nav menu Jquery
+var nav = $('nav'); //find nav
+// create div, append css class line
+var line = $('<div />').addClass('line');
+// append line to nav
+line.appendTo(nav);
+var active = nav.find('.active');
+var pos = 0;
+var wid = 0;
+if(active.length) {
+  pos = active.position().left;
+  wid = active.width();
+  line.css({
+    left: pos,
+    width: wid
+  });
+}
+// Event handle for clicking menu
+nav.find('ul li a').click(function(e) {
+ // e.preventDefault(); stops jump to links
+ 
+ if(!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
+    
+    nav.addClass('animate');
+
+    var _this = $(this);
+
+    nav.find('ul li').removeClass('active');
+
+    var position = _this.parent().position();
+    var width = _this.parent().width();
+
+    if(position.left >= pos) {
+      line.animate({
+        width: ((position.left - pos) + width)
+      }, 300, function() {
+        line.animate({
+          width: width,
+          left: position.left
+        }, 150, function() {
+          nav.removeClass('animate');
+        });
+        _this.parent().addClass('active');
+      });
+    } else {
+      line.animate({
+        left: position.left,
+        width: ((pos - position.left) + wid)
+      }, 300, function() {
+        line.animate({
+          width: width
+        }, 150, function() {
+          nav.removeClass('animate');
+        });
+        _this.parent().addClass('active');
+      });
+    }
+    pos = position.left;
+    wid = width;
+  }
+});
+
+});
+    </script>
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="/css/logo.png" alt="" />
-      </div>
-      <!---  <button class="nav-toggle" aria-label="toggle-navigation"><span class="hamburger">Dev Mr T</span></button> -->
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-          <li class="nav__item">
-            <a href="#services" class="nav__link">My Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About Me</a>
-          </li>
-          <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
-        </ul>
-      </nav>
+<header>
+
+<div class="nav-container">
+<nav>
+  <ul>
+    <li class="active"><a href="#home">Home</a></li>
+    <li><a href="#services">What I do</a></li>
+    <li><a href="#projects">About Me</a></li>
+    <li class=""><a href="#projects">My Work</a></li>
+    <li class=""><a href="#footer">Contact</a></li>
+  </ul>
+</div>
+</nav>
     </header>
-
-    <!-- INTRO SECTION -->
-    <section class="intro" id="home">
-      <!--Note Modifier class(intro)-->
-      <h1 class="section__title section__title--intro">
-        Hi, I am <strong>Tayyib Esau</strong>
-      </h1>
-      <p class="section__subtitle section__subtitle--intro">Web Developer</p>
-      <img src="img/me.jpg" class="intro__img" />
+  <!-- INTRO SECTION -->
+<div class="intro-bg typography" id="welcome-section">
+  <a href="mailto:mrtthewebd@gmail.com" class="footer__link">
+<div class="logo">
+   <img src="./img/logo.png">
+</div>
+</a>
+    <section class="intro" id="home">  
+        <div class="svg-wrapper">
+         <svg height="60" width="520" xmlns="http://www.w3.org/2000/svg">
+           <rect class="shape" height="60" width="520" />
+           <div class="text-head">Hello There! I am Tayyib Esau</div>
+         </svg>
+       </div>
+        <h1 class="section__subtitle section__subtitle--intro">Freelance Web Developer</h1>
+        <img src="./img/me.jpg" class="intro__img">     
     </section>
-
-    <!-- My Services -->
-    <section class="my-services" id="services">
-      <h2 class="section__title section__title--services">What I Do</h2>
-      <div class="services">
-        <div class="service">
-          <h3>Html, CSS, Javascript</h3>
-          <p class="section__about__me">
-            As the building blocks of the modern internet my journey into web
-            development began, predictably, here. I quickly built a resume of
-            basic projects which showcase my growing skills. I credit my
-            continued motivation to improve in this field to the unique and
-            engaging challenges mastering javascript entails.
-          </p>
+</div>
+  <!-- My Services -->
+<section class="what-i-do " id="services">
+        <h2 class="section__title section__title--services">What I Do</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Html, CSS, Javascript</h3>
+                <p class="section__about__me">As the building blocks of the modern internet my journey into web
+                    development began, predictably,
+                    here. I quickly built a resume of basic projects which showcase my growing skills. I credit my
+                    continued
+                    motivation to improve in this field to the unique and engaging challenges mastering javascript
+                    entails.
+                </p>
+            </div>
+            <div class="service">
+                <h3>Front-End Frameworks </h3>
+                <p class="section__about__me"> Learning javascript was when my love for web development truly began.
+                    Quickly however I discovered
+                    React and decided
+                    to focus the majority of my effort into mastering this library/framework(depending who you ask!). My
+                    portfolio includes
+                    many basic applications, showcasing my skillset, as well as larger projects I have been a part of.
+                </p>
+            </div>
+            <div class="service">
+                <h3>Backend</h3>
+                <p class="section__about__me">As an aspiring full stack developer I have some experience with backend
+                    systems.
+                    My portfolio includes courses and projects I have completed using node.js (express) as well as
+                    some experience working with databases (MongoDB & MySQL).
+                </p>
+            </div>
         </div>
-        <div class="service">
-          <h3>React</h3>
-          <p class="section__about__me">
-            Learning javascript was when my love for web development truly
-            began. Quickly however I discovered React and decided to focus the
-            majority of my effort into mastering this
-            library/framework(depending who you ask!). My portfolio includes
-            many basic applications, showcasing my skillset, as well as larger
-            projects I have been a part of.
-          </p>
+        <a href="#work" class="btn">See my work</a>
+    </section>
+ <!-- About Me -->
+<div class="intro-bg">
+<section class="about-me" id="about">
+        <h2 class="section__title section__title--about"><!-- Who I am--></h2>
+        <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
+
+        <div class="about-me__body">
+            <p>
+                After attending high school at Kaipara College, I travelled to South Africa and completed a year of
+                community
+                work at Vista High School.
+                The majority of my time was spent assisting in the creation of a gym and fitness
+                center for in need students at the local high school in the area of my birth.<br>
+                Returning back to New Zealand I began work as a farm hand at Japonica gardens before beginning tertiary
+                education at Otago University. While completing my bachelor of Science I developed an interest in
+                computer
+                programming
+                after being exposed to the language R, used in statistical analysis during laboratory exercises.
+                This combined with my innate interest in the internet naturally led me to the wed development field.<br><br>
+                After Graduating in 2016 I took up several jobs while continuing to build my skills as a freelance web
+                developer.
+                I started building basic websites using wordpress but quickly began to move to learning HTML and CSS.
+                Completing several online courses I eventually found and learnt to love JavaScript and in particular the
+                library/framework REACT.
+            </p>
+            <h4> Previous Position: May 2018 – October 2020: <br>
+                Research and Development Drillers Assistant, Flexidrill Palmerston
+            </h4>
+            <p>
+                My responsibilities include trialling innovative new mineral exploration solutions for future production.
+                This consisted of testing in both controlled environments and in the field as well as:
+              <br>
+              <ul>
+                <li> Collection, measurement, recording and presentation of mineral core samples
+                in conjunction with a team of geologists for a possible future mineral extraction site.</li>
+               <li> Viscosity testing and flow management of various polymer drilling fluid solutions.</li>
+               <li> IT support for data collection of drilling speed, tool trial performance and core sample recovery
+                 information(excel).</li>
+               <li> General maintenance of site machinery, rigs, solids removal units, drilling rods, pumps and platforms.</li>
+                <ul>
+            </p>
         </div>
-        <div class="service">
-          <h3>Backend</h3>
-          <p class="section__about__me">
-            As an aspiring full stack developer I have some experience with
-            backend systems. My portfolio includes courses and projects I have
-            completed using node.js (express) as well as some experience working
-            with databases (MongoDB & MySQL).
-          </p>
-        </div>
-      </div>
-      <a href="#work" class="btn">See my work</a>
+        <img src="https://mrtwebd.netlify.app/img/who1.jpg" class="about-me__img">
     </section>
-
-    <!-- About Me -->
-    <section class="about-me" id="about">
-      <h2 class="section__title section__title--about">Who I am</h2>
-      <p class="section__subtitle section__subtitle--about">
-        About Me & Previous Work History
-      </p>
-
-      <div class="about-me__body">
-        <p>
-          After attending high school at Kaipara College, I travelled to South
-          Africa and completed a year of community work at Vista High School.
-          The majority of my time was spent assisting in the creation of a gym
-          and fitness center for in need students at the local high school in
-          the area of my birth. Returning back to New Zealand I began work as a
-          farm hand at Japonica gardens before beginning tertiary education at
-          Otago University. While completing my bachelor of Science I developed
-          an interest in computer programming after being exposed to the
-          language R, used in statistical analysis during laboratory exercises.
-          This combined with my innate interest in the internet naturally led me
-          to the wed development field. After Graduating in 2016 I took up
-          several jobs while continuing to build my skills as a freelance web
-          developer. I started building basic websites using wordpress but
-          quickly began to move to learning HTML and CSS. Completing several
-          online courses I eventually found and learnt to love JavaScript and in
-          particular the library/framework REACT.
-        </p>
-        <h4>
-          Previous Position: May 2018 – October 2020: <br />
-          Research and Development Drillers Assistant, Flexidrill Palmerston
-        </h4>
-        <p>
-          My responsibilities include trialing innovative new mineral
-          exploration solutions for future production. This consists of testing
-          in both controlled environments and in the field. Collection,
-          measurement, recording and presentation of mineral core samples in
-          conjunction with a team of geologists for a possible future mineral
-          extraction site. Viscosity testing and flow management of various
-          polymer drilling fluid solutions. IT support for data collection of
-          drilling speed, tool trial performance and core sample recovery
-          information(excel). General maintenance of site machinery, rigs,
-          solids removal units, drilling rods, pumps and platforms.
-        </p>
-      </div>
-      <img src="img/who1.jpg" class="about-me__img" />
-    </section>
-
-    <!-- My WORK -->
-    <section class="my-work" id="work">
-      <h2 class="section__title section__title--about">My Work</h2>
-      <p class="section__subtitle section__subtitle--work">
-        A selection of my projects
-      </p>
-      <div class="portfolio">
-        <!-- Port Image!! -->
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-        <!-- Port Image!! -->
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-        <!-- Port Image!! -->
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-        <!-- Port Image!! -->
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-        <a href="#" class="portfolio__item">
-          <img src="img/bg.jpeg" alt="" class="portfolio__img" />
-        </a>
-      </div>
-      <!--- <img src="img/me.jpg"> -->
-    </section>
-
-    <footer class="footer">
-      <a href="mailto:esamu161@gmail.com" class="footer__link"
-        >esamu161@gmail.com</a
-      >
-      <ul class="social-list">
-        <li class="social-list__item">
-          <a class="social-list__link" href="https://codepen.io/your-work"
-            ><i class="fab fa-github"></i
-          ></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link"><i class="fab fa-twitter"></i></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link"><i class="fab fa-free-code-camp"></i></a>
-        </li>
-      </ul>
+</div>
+ <section id="projects"> 
+ <div class="work">
+ <p class="section__subtitle section__subtitle--work">A selection of my projects:</p>
+ </div>
+<div class="wrap">
+<a href="https://codepen.io/collection/AVRbxz" target="_blank">
+<div class="tile">
+  <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
+  <div class="text">
+  <h1>React Projects</h1>
+  <h2 class="animate-text"></h2>
+  <p class="animate-text">A collection of basic React projects completed during the freeCodeCamp curriculum. Most are styled using vanilla css and online css snippets.</p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+ </a>
+<a href="https://repl.it/repls/folder/FCC-BackEnd-Projects" target="_blank">
+<div class="tile"> 
+  <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
+  <div class="text">
+  <h1>Backend Projects</h1>
+  <!--<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2> -->
+  <p class="animate-text">A selection of basic Server-Side and Database Projects completed during the freeCodeCamp.org curriculum.</p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+</a>
+ <a href="https://heads-up-react-placeholder.vercel.app" target="_blank">
+ <div class="tile"> 
+  <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
+  <div class="text">
+  <h1>HeadsUp NZ: React, node (express)MySql</h1>
+    <!--
+  <h2 class="animate-text">A fullstack Web Application Built using React, node (express) and MySql</h2>
+-->
+  <p class="animate-text"> My work on the ongoing development of a full stack Web App for HeadsUp NZ. While  mostly concerned the FrontEnd, I had input and experience working with server-side and database levels of the application. Click to see a demonstrative version.<br>
+  <br><strong>Note:</strong>As this is a placeholder version some features and styles differ from the original. </p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+ </a>
+  <a href="https://codepen.io/collection/AVRbxz" target="_blank">
+<div class="tile">
+  <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
+  <div class="text">
+  <h1>Basic HTML/CSS and CMS built Websites</h1>
+  <h2 class="animate-text"></h2>
+  <p class="animate-text">Websites built with HTML/CSS or CMS(Wordpress)</p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+ </a>
+</div> 
+</section>
+<footer class="footer" id="footer">
+        <a href="mailto:mrtthewebd@gmail.com" class="footer__link">MrTtheWebD@gmail.com</a>
+        <br>
+        <a href="./resume.pdf" target="_blank"  download="newfilename">Click to View My Resume</a>
+        
+        <ul class="social-list">
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com/MrTesau">Github&nbsp  <i class="fab fa-github"></i></a>
+            </li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/yoloswagthegod">Twitter&nbsp<i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="social-list__item"><a class="social-list__link" href="https://codepen.io/mrtesau">CodePen</i></a>
+            </li>
+            <li class="social-list__item"><a id="profile-link" target="_blank" class="social-list__link" href="https://www.freecodecamp.org/mrtesau">CodeCamp&nbsp<i class="fab fa-free-code-camp"></i></a>
+            </li>
+        </ul>
     </footer>
+
   </body>
 </html>
