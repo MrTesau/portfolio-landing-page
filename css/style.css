@@ -50,6 +50,7 @@ body {
   flex-direction: row-reverse;
   width: 90%;
 }
+/* Sort Nav and overflow/width on smaller screens */
 nav {
   background: #1a1e23;
   padding-bottom: 12px;
@@ -71,7 +72,6 @@ nav ul {
   list-style: none;
   display: -webkit-box;
   display: flex;
-  /*flex-direction: row-reverse;*/
 }
 nav ul li {
   margin: 0 40px 0 0;
