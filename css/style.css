@@ -45,59 +45,65 @@ body {
   font-size: var(--fs-body);
   line-height: 1.6;
 }
-.nav-container {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 90%;
-}
-/* Sort Nav and overflow/width on smaller screens */
-nav {
-  background: #1a1e23;
-  padding-bottom: 12px;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: row-reverse;
-}
-nav .line {
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  margin: 10px 0 0 0;
-  background: #ff1847;
-}
-nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: flex;
-}
-nav ul li {
-  margin: 0 40px 0 0;
-  opacity: 0.4;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-nav ul li:hover {
-  opacity: 0.7;
-}
-nav ul li.active {
-  opacity: 1;
-}
-nav ul li:last-child {
-  margin-right: 0;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  font-size: 13px;
-}
+
+/***************** Nav spaghetti ***********/
+/* Desktop view */
 @media (min-width: 800px) {
+  .nav-container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+  }
+  nav {
+    background: #1a1e23;
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  nav .line {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0 0 0;
+    background: #ff1847;
+  }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: flex;
+  }
+  nav ul li {
+    margin: 0 40px 0 0;
+    opacity: 0.4;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  nav ul li:hover {
+    opacity: 0.7;
+  }
+  nav ul li.active {
+    opacity: 1;
+  }
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 13px;
+  }
+  /* Hide hamburger Checkbox */
+  label input {
+    display: none;
+  }
   header {
     background: #1a1e23;
     font-family: "Lato", sans-serif !important;
@@ -110,15 +116,11 @@ nav ul li a {
     align-items: center;
     min-height: 1em;
     align-items: center;
-    /*margin-top: -20px;*/
-    /*border-bottom: 2px solid black;*/
-    /*position: fixed;*/
     width: 100%;
     height: 90px;
     padding: 20px;
     position: fixed;
     top: 0;
-    width: 100%;
     z-index: 3;
     height: 5vh;
     padding: 5px;
@@ -126,29 +128,110 @@ nav ul li a {
     margin-bottom: 0px;
   }
 }
-header {
-  background: #1a1e23;
-  font-family: "Lato", sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  min-height: 1em;
-  align-items: center;
-  /*margin-top: -20px;*/
-  /*border-bottom: 2px solid black;*/
-  /*position: fixed;*/
-  width: 100%;
-  height: 90px;
-  padding: 20px;
+
+/* Mobile view- Hamburger */
+@media (max-width: 800px) {
+  .logo img {
+    display: none;
+  }
+  /* Hamburger import ******/
+  /*@import url("https://fonts.googleapis.com/css?family=Cutive+Mono");*/
+
+  nav ul li a {
+    font-family: "Lato", sans-serif !important;
+    color: #1a1e23 !important;
+  }
+
+  label .menu {
+    position: absolute;
+    left: 80%;
+    top: -3vh;
+    z-index: 100;
+    width: 10vh;
+    height: 10vh;
+    background: #1a1e23;
+    border-radius: 50% 50% 50% 50%;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+    cursor: pointer;
+  }
+
+  label .hamburger {
+    position: absolute;
+    top: 6vh;
+    left: 3vh;
+
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  label .hamburger:after,
+  label .hamburger:before {
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+  label .hamburger:before {
+    top: -10px;
+  }
+  label .hamburger:after {
+    bottom: -10px;
+  }
+  label input {
+    display: none;
+  }
+  label input:checked + .menu {
+    box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
+    border-radius: 0;
+  }
+  label input:checked + .menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  label input:checked + .menu .hamburger:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+  label input:checked + .menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+  }
+  label input:checked + .menu + nav ul {
+    opacity: 1;
+  }
+  label nav ul {
+    z-index: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: 0.25s 0s ease-in-out;
+    transition: 0.25s 0s ease-in-out;
+  }
+  label nav a {
+    margin-bottom: 1em;
+    display: block;
+    color: #000;
+    text-decoration: none;
+  }
 }
 
-.logo img {
-  display: none;
-}
+/********************************************/
 @media (min-width: 800px) {
   .logo img {
     display: flex;
@@ -173,7 +256,7 @@ img {
 strong {
   font-weight: var(--fw-bold);
 }
-/* link to my work  */
+/* Button link to my work  ***********/
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
@@ -192,6 +275,7 @@ strong {
 .btn:hover {
   transform: scale(1.1);
 }
+/*********************************/
 
 .section__title {
   margin-bottom: 0.25em;
@@ -221,12 +305,18 @@ strong {
 .section__subtitle--about {
   background-color: var(--clr-accent);
 }
-/* Intro Section */
+/***************************************** Intro Section ******************************************/
 .intro {
   position: relative;
   /*background: #1A1E23;*/
   color: white; /*var(--clr-light);*/
   overflow: hidden;
+}
+.intro-nav-container {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 /* Good Resource for Grid columns:
 https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-grid-column-to-control-spacing */
@@ -240,7 +330,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-grid-colum
       "img title"
       "img subtitle";
     grid-template-columns: min-content max-content;
-    top: 5vh;
+    top: 0.5vh;
   }
   .intro__img {
     grid-area: img;
@@ -255,8 +345,28 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/use-grid-colum
     text-align: right;
     position: relative;
     left: -1.5em;
-    width: calc(90%);
+    width: calc(100%);
   }
+  .intro-nav-container {
+    width: 90%;
+    grid-column: 2/3;
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.intro-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0;
+}
+.intro-nav li a {
+  color: #fff;
+  min-width: 15px !important;
 }
 
 .intro__img {
@@ -477,7 +587,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   position: relative;
   cursor: pointer;
   transition: all 0.4s ease-out;
-  box-shadow: 0px 15px 27px -17px rgb(96, 96, 96);
+  /*box-shadow: 0px 15px 27px -17px rgb(96, 96, 96);*/
   overflow: hidden;
   color: white;
   font-family: "Roboto";
@@ -525,7 +635,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   transition: all 0.6s ease-in-out;
 }
 .tile:hover {
-  box-shadow: 0px 35px 77px -17px rgb(96, 96, 96);
+  /*box-shadow: 0px 35px 77px -17px rgb(96, 96, 96);*/
   transform: scale(1.05);
 }
 .tile:hover img {
@@ -575,10 +685,11 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
 @media (max-width: 1000px) {
   .wrap {
     flex-direction: column;
-    width: 400px;
+    width: 300px;
+    justify-content: center;
   }
 }
-
+/**************************FOOTER **********************/
 .footer {
   background: #111;
   color: var(--clr-accent);

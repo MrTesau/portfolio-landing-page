@@ -97,9 +97,14 @@ nav.find('ul li a').click(function(e) {
   </head>
 
   <body>
-<header>
 
-<div class="nav-container">
+<header>
+  <div class="nav-container">
+   <label>
+     <input type='checkbox'>
+     <span class='menu'>
+     <span class='hamburger'></span>
+    </span>
 <nav>
   <ul>
     <li class="active"><a href="#home">Home</a></li>
@@ -108,17 +113,28 @@ nav.find('ul li a').click(function(e) {
     <li class=""><a href="#projects">My Work</a></li>
     <li class=""><a href="#footer">Contact</a></li>
   </ul>
-</div>
 </nav>
-    </header>
-  <!-- INTRO SECTION -->
-<div class="intro-bg typography" id="welcome-section">
+</label>
+</div>
+</header>
+
+
+
+   <div class="intro-bg typography" id="welcome-section">
   <a href="mailto:mrtthewebd@gmail.com" class="footer__link">
 <div class="logo">
    <img src="./img/logo.png">
 </div>
 </a>
-    <section class="intro" id="home">  
+    <section class="intro" id="home"> 
+          <div class="intro-nav-container">
+         <ul class="intro-nav">
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com/MrTesau"><i class="fab fa-github fa-2x"></i></a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/yoloswagthegod"><i class="fab fa-twitter fa-2x"></i></a></li>
+            <li class="social-list__item"><a id="profile-link" target="_blank" class="social-list__link" href="https://www.freecodecamp.org/mrtesau"><i class="fab fa-free-code-camp fa-2x"></i></a>
+            </li>
+        </ul>
+  </div> 
         <div class="svg-wrapper">
          <svg height="60" width="520" xmlns="http://www.w3.org/2000/svg">
            <rect class="shape" height="60" width="520" />
@@ -126,11 +142,13 @@ nav.find('ul li a').click(function(e) {
          </svg>
        </div>
         <h1 class="section__subtitle section__subtitle--intro">Freelance Web Developer</h1>
+  
         <img src="./img/me.jpg" class="intro__img">     
     </section>
-</div>
+   </div>
+
   <!-- My Services -->
-<section class="what-i-do " id="services">
+    <section class="what-i-do " id="services">
         <h2 class="section__title section__title--services">What I Do</h2>
         <div class="services">
             <div class="service">
@@ -165,7 +183,7 @@ nav.find('ul li a').click(function(e) {
         <a href="#work" class="btn">See my work</a>
     </section>
  <!-- About Me -->
-<div class="intro-bg">
+  <div class="intro-bg">
 <section class="about-me" id="about">
         <h2 class="section__title section__title--about"><!-- Who I am--></h2>
         <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
@@ -208,8 +226,9 @@ nav.find('ul li a').click(function(e) {
         </div>
         <img src="https://mrtwebd.netlify.app/img/who1.jpg" class="about-me__img">
     </section>
-</div>
- <section id="projects"> 
+  </div>
+
+  <section id="projects"> 
  <div class="work">
  <p class="section__subtitle section__subtitle--work">A selection of my projects:</p>
  </div>
@@ -221,6 +240,24 @@ nav.find('ul li a').click(function(e) {
   <h1>React Projects</h1>
   <h2 class="animate-text"></h2>
   <p class="animate-text">A collection of basic React projects completed during the freeCodeCamp curriculum. Most are styled using vanilla css and online css snippets.</p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+ </a>
+  <a href="https://heads-up-react-placeholder.vercel.app" target="_blank">
+ <div class="tile"> 
+  <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
+  <div class="text">
+  <h1>HeadsUp NZ: React, node (express)MySql</h1>
+    <!--
+  <h2 class="animate-text">A fullstack Web Application Built using React, node (express) and MySql</h2>
+-->
+  <p class="animate-text"> My work on the ongoing development of a full stack Web App for HeadsUp NZ. While  mostly concerned the FrontEnd, I had input and experience working with server-side and database levels of the application. Click to see a demonstrative version.<br>
+  <br><strong>Note:</strong>As this is a placeholder version some features and styles differ from the original. </p>
 <div class="dots">
     <span></span>
     <span></span>
@@ -244,24 +281,7 @@ nav.find('ul li a').click(function(e) {
   </div>
  </div>
 </a>
- <a href="https://heads-up-react-placeholder.vercel.app" target="_blank">
- <div class="tile"> 
-  <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
-  <div class="text">
-  <h1>HeadsUp NZ: React, node (express)MySql</h1>
-    <!--
-  <h2 class="animate-text">A fullstack Web Application Built using React, node (express) and MySql</h2>
--->
-  <p class="animate-text"> My work on the ongoing development of a full stack Web App for HeadsUp NZ. While  mostly concerned the FrontEnd, I had input and experience working with server-side and database levels of the application. Click to see a demonstrative version.<br>
-  <br><strong>Note:</strong>As this is a placeholder version some features and styles differ from the original. </p>
-<div class="dots">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  </div>
- </div>
- </a>
+
   <a href="https://codepen.io/collection/AVRbxz" target="_blank">
 <div class="tile">
   <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
@@ -278,8 +298,9 @@ nav.find('ul li a').click(function(e) {
  </div>
  </a>
 </div> 
-</section>
-<footer class="footer" id="footer">
+  </section>
+
+ <footer class="footer" id="footer">
         <a href="mailto:mrtthewebd@gmail.com" class="footer__link">MrTtheWebD@gmail.com</a>
         <br>
         <a href="./resume.pdf" target="_blank"  download="newfilename">Click to View My Resume</a>
@@ -294,7 +315,7 @@ nav.find('ul li a').click(function(e) {
             <li class="social-list__item"><a id="profile-link" target="_blank" class="social-list__link" href="https://www.freecodecamp.org/mrtesau">CodeCamp&nbsp<i class="fab fa-free-code-camp"></i></a>
             </li>
         </ul>
-    </footer>
+ </footer>
 
   </body>
 </html>
