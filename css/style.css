@@ -297,10 +297,10 @@ strong {
   font-family: "Lato", sans-serif !important;
   background-color: #494a4b;
   color: var(--clr-light);
-  padding: 0.25em;
+  padding: 0.1rem;
   padding-right: 1em;
   font-family: var(--ff-secondary);
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 .section__subtitle--about {
   background-color: var(--clr-accent);
@@ -508,11 +508,14 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   color: #dcdcdc;
   font-size: 1rem;
 }
+.about-me-bg {
+  background: #1a1e23;
+}
 .about-me__img {
   box-shadow: var(--bs);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .about-me {
     display: grid;
     grid-template-columns: 1fr 200px;
@@ -521,8 +524,9 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
       "subtitle img"
       "text img";
     grid-column-gap: 2em;
-    max-height: 100vh;
-    padding-top: 2vh;
+    height: 110vh;
+    width: 100%;
+    padding-top: 4vh;
   }
   .section__title--about {
     grid-area: title;
@@ -533,6 +537,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
     position: relative;
     left: -1em;
     width: calc(100% + 2em);
+    height: 3rem !important;
     padding-left: 1em;
     padding-right: calc(200px + 4em);
   }
@@ -541,33 +546,136 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
     position: relative;
     z-index: 2;
   }
-
-  /************************************************** MY WORK ******************************/
-  .my-work {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-    text-align: center;
-  }
-  .section__subtitle--work {
-    color: var(--clr-accent);
-    font-weight: var(--fw-bold);
-    margin-bottom: 2em;
-    background-color: black;
-  }
-  .work {
-    background-color: black;
+  .about-me-bg {
+    height: 110vh;
   }
 }
+/************************************************** MY WORK ******************************/
+/*
+.my-work {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+}
 
+.section__subtitle--work {
+  color: var(--clr-accent);
+  font-weight: var(--fw-bold);
+  margin-bottom: 2em;
+  background-color: black;
+}
+*/
+/*
 .work {
+  background-color: black;
+  margin-top: 5em;
   display: flex;
   justify-content: center;
   width: 100%;
 }
+*/
+.projects-subtitle {
+  display: flex;
+  justify-content: center;
+  font-family: "Lato", sans-serif !important;
+}
+
 #projects {
-  background: black;
+  background: #ddd6cd;
   width: 100%;
 }
+/**TEST GROUND **/
+.container {
+  width: 100%;
+  padding: 20px;
+  margin: 50px auto 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.portfolio-item {
+  padding: 20px;
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.portfolio-item__demo {
+  padding-top: 100%;
+  position: relative;
+}
+.portfolio-item__demo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: 0% 0%;
+  transition: all 3s ease-in-out;
+}
+.portfolio-item__demo:hover img {
+  object-position: 0% 100%;
+}
+/* Wrapper for each item with hover effect */
+.portfolio-item__wrapper {
+  background-color:  #fff;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.11);
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.portfolio-item__wrapper:hover {
+  box-shadow: 0px 22px 30px -5px rgba(0, 0, 0, 0.3);
+}
+/* Title */
+.portfolio-item__title h2 {
+  font-size: 16px;
+   font-family: "Lato", sans-serif !important;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0;
+}
+
+
+/**************************FOOTER **********************/
+.footer {
+  background: #111;
+  color: var(--clr-accent);
+  text-align: center;
+  padding: 3.5em 0;
+}
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer__link {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+  opacity: 0.7;
+}
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  padding: 0;
+}
+.social-list__item {
+  margin: 0 0.5em;
+  height: 2em;
+}
+
+
+
+
+/*
+Tiles
 
 .wrap {
   margin: 0 auto 0 auto;
@@ -587,7 +695,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   position: relative;
   cursor: pointer;
   transition: all 0.4s ease-out;
-  /*box-shadow: 0px 15px 27px -17px rgb(96, 96, 96);*/
+  box-shadow: 0px 15px 27px -17px rgb(96, 96, 96);
   overflow: hidden;
   color: white;
   font-family: "Roboto";
@@ -635,7 +743,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   transition: all 0.6s ease-in-out;
 }
 .tile:hover {
-  /*box-shadow: 0px 35px 77px -17px rgb(96, 96, 96);*/
+  box-shadow: 0px 35px 77px -17px rgb(96, 96, 96);
   transform: scale(1.05);
 }
 .tile:hover img {
@@ -689,34 +797,5 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
     justify-content: center;
   }
 }
-/**************************FOOTER **********************/
-.footer {
-  background: #111;
-  color: var(--clr-accent);
-  text-align: center;
-  padding: 3.5em 0;
-}
-.footer a {
-  color: inherit;
-  text-decoration: none;
-}
-.footer__link {
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-bold);
-}
 
-.footer__link:hover,
-.social-list__link:hover {
-  opacity: 0.7;
-}
-.social-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 2em 0;
-  padding: 0;
-}
-.social-list__item {
-  margin: 0 0.5em;
-  height: 2em;
-}
+-->

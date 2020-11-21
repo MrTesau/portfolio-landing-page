@@ -109,7 +109,7 @@ nav.find('ul li a').click(function(e) {
   <ul>
     <li class="active"><a href="#home">Home</a></li>
     <li><a href="#services">What I do</a></li>
-    <li><a href="#projects">About Me</a></li>
+    <li><a href="#about">About Me</a></li>
     <li class=""><a href="#projects">My Work</a></li>
     <li class=""><a href="#footer">Contact</a></li>
   </ul>
@@ -117,9 +117,6 @@ nav.find('ul li a').click(function(e) {
 </label>
 </div>
 </header>
-
-
-
    <div class="intro-bg typography" id="welcome-section">
   <a href="mailto:mrtthewebd@gmail.com" class="footer__link">
 <div class="logo">
@@ -183,11 +180,10 @@ nav.find('ul li a').click(function(e) {
         <a href="#work" class="btn">See my work</a>
     </section>
  <!-- About Me -->
-  <div class="intro-bg">
+  <div class="about-me-bg">
 <section class="about-me" id="about">
         <h2 class="section__title section__title--about"><!-- Who I am--></h2>
         <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
-
         <div class="about-me__body">
             <p>
                 After attending high school at Kaipara College, I travelled to South Africa and completed a year of
@@ -228,10 +224,17 @@ nav.find('ul li a').click(function(e) {
     </section>
   </div>
 
-  <section id="projects"> 
- <div class="work">
- <p class="section__subtitle section__subtitle--work">A selection of my projects:</p>
- </div>
+<section id="projects"> 
+
+<div class="projects-subtitle">
+ <h1 class="section__subtitle">A selection of my projects</h1>
+</div>
+
+<!--
+<div class="projects-subtitle">
+  <p class="section__subtitle section__subtitle--work">React Applications:</p>
+</div>
+
 <div class="wrap">
 <a href="https://codepen.io/collection/AVRbxz" target="_blank">
 <div class="tile">
@@ -253,9 +256,9 @@ nav.find('ul li a').click(function(e) {
   <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
   <div class="text">
   <h1>HeadsUp NZ: React, node (express)MySql</h1>
-    <!--
+
   <h2 class="animate-text">A fullstack Web Application Built using React, node (express) and MySql</h2>
--->
+
   <p class="animate-text"> My work on the ongoing development of a full stack Web App for HeadsUp NZ. While  mostly concerned the FrontEnd, I had input and experience working with server-side and database levels of the application. Click to see a demonstrative version.<br>
   <br><strong>Note:</strong>As this is a placeholder version some features and styles differ from the original. </p>
 <div class="dots">
@@ -271,7 +274,7 @@ nav.find('ul li a').click(function(e) {
   <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
   <div class="text">
   <h1>Backend Projects</h1>
-  <!--<h2 class="animate-text">More lorem ipsum bacon ipsum.</h2> -->
+
   <p class="animate-text">A selection of basic Server-Side and Database Projects completed during the freeCodeCamp.org curriculum.</p>
 <div class="dots">
     <span></span>
@@ -282,7 +285,7 @@ nav.find('ul li a').click(function(e) {
  </div>
 </a>
 
-  <a href="https://codepen.io/collection/AVRbxz" target="_blank">
+ <a href="https://codepen.io/collection/AVRbxz" target="_blank">
 <div class="tile">
   <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
   <div class="text">
@@ -297,9 +300,95 @@ nav.find('ul li a').click(function(e) {
   </div>
  </div>
  </a>
-</div> 
-  </section>
 
+</div> 
+
+
+<div class="projects-subtitle">
+  <p class="section__subtitle section__subtitle--work">Back End Projects:</p>
+</div>
+
+
+<div class="wrap">
+<a href="https://repl.it/repls/folder/FCC-BackEnd-Projects" target="_blank">
+<div class="tile"> 
+  <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
+  <div class="text">
+  <h1>Backend Projects</h1>
+ 
+  <p class="animate-text">A selection of basic Server-Side and Database Projects completed during the freeCodeCamp.org curriculum.</p>
+<div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </div>
+ </div>
+</a>
+-->
+
+<div class="container">
+  <div class="row">
+
+   <div class="portfolio-item">
+      <div class="portfolio-item__wrapper" data-demo="https://www.google.com/" data-title="Title for this item">
+        <div class="portfolio-item__demo">
+          <img src="./img/React-heads.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+          <h2>HeadsUp NZ: Web Application Built using React, Node.js & MySql</h2>
+        </div>
+      </div>
+    </div>
+
+     <div class="portfolio-item">
+      <div class="portfolio-item__wrapper" data-demo="https://www.google.com/" data-title="Title for this item">
+        <div class="portfolio-item__demo">
+          <img src="http://drive.google.com/uc?export=view&id=1EKxzhUGC4ZGEe7ZAgZo8rmwhUTdLGrsm">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+          <h2>Title for this item</h2>
+        </div>
+      </div>
+    </div>
+
+     <div class="portfolio-item">
+      <div class="portfolio-item__wrapper" data-demo="https://www.google.com/" data-title="Title for this item">
+        <div class="portfolio-item__demo">
+          <img src="http://drive.google.com/uc?export=view&id=1EKxzhUGC4ZGEe7ZAgZo8rmwhUTdLGrsm">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+          <h2>Title for this item</h2>
+        </div>
+      </div>
+    </div>
+      <div class="portfolio-item">
+      <div class="portfolio-item__wrapper" data-demo="https://www.google.com/" data-title="Title for this item">
+        <div class="portfolio-item__demo">
+          <img src="http://drive.google.com/uc?export=view&id=1EKxzhUGC4ZGEe7ZAgZo8rmwhUTdLGrsm">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+          <h2>Title for this item</h2>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+</div> 
+
+  </section>
  <footer class="footer" id="footer">
         <a href="mailto:mrtthewebd@gmail.com" class="footer__link">MrTtheWebD@gmail.com</a>
         <br>
@@ -316,6 +405,5 @@ nav.find('ul li a').click(function(e) {
             </li>
         </ul>
  </footer>
-
   </body>
 </html>
