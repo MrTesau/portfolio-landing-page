@@ -504,12 +504,12 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
 .about-me {
   max-width: 1000px;
   margin: 0 auto;
-  background: #1a1e23;
-  color: #dcdcdc;
+  /*background:#ddd6cd;*/
+  color:#1a1e23; 
   font-size: 1rem;
 }
 .about-me-bg {
-  background: #1a1e23;
+  background:#D6D7D7;
 }
 .about-me__img {
   box-shadow: var(--bs);
@@ -547,7 +547,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
     z-index: 2;
   }
   .about-me-bg {
-    height: 110vh;
+    height: 115vh;
   }
 }
 /************************************************** MY WORK ******************************/
@@ -578,10 +578,11 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
   display: flex;
   justify-content: center;
   font-family: "Lato", sans-serif !important;
+  color:#ddd6cd;
 }
 
 #projects {
-  background: #ddd6cd;
+  background:#1a1e23; 
   width: 100%;
 }
 /**TEST GROUND **/
@@ -621,7 +622,8 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
 }
 /* Wrapper for each item with hover effect */
 .portfolio-item__wrapper {
-  background-color:  #fff;
+  background-color:#ddd6cd;
+  padding: 1px;
   box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.11);
   cursor: pointer;
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -631,18 +633,35 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
 }
 /* Title */
 .portfolio-item__title h2 {
-  font-size: 16px;
+  font-size: 14px;
    font-family: "Lato", sans-serif !important;
   text-align: center;
   padding: 10px 0;
   margin: 0;
 }
+.portfolio-item__title a{
+    text-decoration: none;
+    color :#1a1e23; 
+}
 
+@media (max-width: 1000px) {
+  .row {
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+  }
+  .portfolio-item {
+  padding: 20px;
+  flex-basis: 25%;
+  max-width: 100%;
+}
+}
 
 /**************************FOOTER **********************/
 .footer {
   background: #111;
-  color: var(--clr-accent);
+   color:#ddd6cd;
+   font-family: "Lato", sans-serif !important;
   text-align: center;
   padding: 3.5em 0;
 }
