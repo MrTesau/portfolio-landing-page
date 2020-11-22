@@ -647,7 +647,7 @@ https://www.freecodecamp.org/learn/responsive-web-design/css-grid/place-items-in
 @media (max-width: 1000px) {
   .row {
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     justify-content: center;
   }
   .portfolio-item {
