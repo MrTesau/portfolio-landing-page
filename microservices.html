@@ -144,7 +144,21 @@
             <p>Exercise Log:</p>
           </div>
         </div>
-        <div class="microservice-item">EXERCISE TRACKER</div>
+        <div class="microservice-item" id="metadata-reader">
+          <h3>File Metadata Reader</h3>
+          <p>Please Upload a File ...</p>
+          <div class="view">
+            <h4 id="output"></h4>
+            <form
+              enctype="multipart/form-data"
+              method="POST"
+              action="/api/fileanalyse"
+            >
+              <input id="inputfield" type="file" name="upfile" />
+              <input id="button" type="submit" value="Upload" />
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 
