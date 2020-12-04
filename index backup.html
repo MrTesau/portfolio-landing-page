@@ -91,39 +91,8 @@ nav.find('ul li a').click(function(e) {
   }
 });
 
-// Preview Frames Jquery
-// https://medium.com/@jerryshrestha/tutorial-an-interactive-portfolio-showcase-for-web-projects-998ee228e841
-      $('.portfolio-item__wrapper').click(function(){
-   var titleDiv = $('#iframe-content .demo-title'), //target blank html "preview" div
-       demo_url = $(this).data('demo'), // clicked projects data url
-       demo_title = $(this).data('title'); // clicked projects title
-
-       //place the value inside demo_title class
-       titleDiv.text(demo_title);
-       // iframe HTML markup that will be appended -> grabbed from clicked preview
-var html = '';
-        html += '<div class="iframe-wrapper"><iframe id="demo-iframe" src="'+ demo_url +'">This feature requires inline frames. You have iframes disabled or your browser does not support them.</iframe></div>';
-
-        // Append to Preview iframe and show
-        $('#iframe-content').append(html).show();
-        $('.devices button[data-device-mode]').click(function(){
-  var deviceMode = $(this).data('device-mode'),
-      targetIframe = $('#iframe-content');
-  //add class corresponding to screen size
-  targetIframe.attr('class', deviceMode);
-});
-})
-// close it
-$('.preview-close').click(function(){
-  $('#iframe-content').hide().find('.iframe-wrapper').remove();
-  $('.devices button').removeClass('active');
-  $('#iframe-content').attr('class', '');
-});
-
-
 });
     </script>
-  
   </head>
 
   <body>
@@ -264,74 +233,6 @@ $('.preview-close').click(function(){
   <div class="row">
 
    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
-        <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
-          <span class="quick-view">
-             <span class="quick-demo">Preview</span>
-          </span>
-        </div>
-        <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
-        <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
-          <span class="quick-view">
-             <span class="quick-demo">Preview</span>
-          </span>
-        </div>
-        <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
-        <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
-          <span class="quick-view">
-             <span class="quick-demo">Preview</span>
-          </span>
-        </div>
-        <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
-        </div>
-      </div>
-    </div>
-  </div> 
-</div>
-
-<div id="iframe-content" style="display: none;">
-  <div class="iframe-title">
-    <div class="demo-title"></div>
-    <div class="devices-wrapper">
-      <div class="devices">
-        <button type="button" class="preview-desktop" data-device-mode="desktop"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M3 2h14c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1h-5v2h2c.55 0 1 .45 1 1v1H5v-1c0-.55.45-1 1-1h2v-2H3c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm13 9V4H4v7h12zM5 5h9L5 9V5z"/></g></svg></button>
-        <button type="button" class="preview-tablet" data-device-mode="tablet">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M4 2h12c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm11 14V4H5v12h10zM6 5h6l-6 5V5z"/></g></svg>
-        </button>
-        <button type="button" class="preview-mobile" data-device-mode="mobile">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M6 2h8c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm7 12V4H7v10h6zM8 5h4l-4 5V5z"/></g></svg>
-        </button>
-        <button type="button" class="preview-close">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"/></g></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="site-loading">
-    <h3>Preview Loading...</h3>
-  </div>
-</div>
-<!--
-<div class="container">
-  <div class="row">
-
-   <div class="portfolio-item">
      <a href="https://heads-up-react-placeholder.vercel.app/auth/login-page" target="_blank">
       <div class="portfolio-item__wrapper">
         <div class="portfolio-item__demo">
@@ -465,7 +366,6 @@ $('.preview-close').click(function(){
     </div>
 
 </div> 
--->
 </div> 
 
 <div class="projects-subtitle">
