@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tayyib Esau's Portfolio</title>
+    <link rel="icon" href="img/logo.png">
     <link
       type="text/css"
       rel="stylesheet"
@@ -21,159 +22,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function() { 
-$(function() {
-  $('.shape').addClass("shape-border");
-  $('.svg-wrapper').click(function() {
-    $('.shape').toggleClass('shape-border');
-  });
-});
-// Nav menu Jquery
-var nav = $('nav'); //find nav
-// create div, append css class line
-var line = $('<div />').addClass('line');
-// append line to nav
-line.appendTo(nav);
-var active = nav.find('.active');
-var pos = 0;
-var wid = 0;
-if(active.length) {
-  pos = active.position().left;
-  wid = active.width();
-  line.css({
-    left: pos,
-    width: wid
-  });
-}
-// Event handle for clicking menu
-nav.find('ul li a').click(function(e) {
- // e.preventDefault(); stops jump to links
- if(!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
-    
-    nav.addClass('animate');
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 
-    var _this = $(this);
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">MrTtheWebD@gmail.com</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">What I Do</a></li>
+                <li><a href="#skills" class="menu-btn">About Me</a></li>
+                <li><a href="#teams" class="menu-btn">Projects</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    nav.find('ul li').removeClass('active');
-
-    var position = _this.parent().position();
-    var width = _this.parent().width();
-
-    if(position.left >= pos) {
-      line.animate({
-        width: ((position.left - pos) + width)
-      }, 300, function() {
-        line.animate({
-          width: width,
-          left: position.left
-        }, 150, function() {
-          nav.removeClass('animate');
-        });
-        _this.parent().addClass('active');
-      });
-    } else {
-      line.animate({
-        left: position.left,
-        width: ((pos - position.left) + wid)
-      }, 300, function() {
-        line.animate({
-          width: width
-        }, 150, function() {
-          nav.removeClass('animate');
-        });
-        _this.parent().addClass('active');
-      });
-    }
-    pos = position.left;
-    wid = width;
-  }
-});
-
-// Preview Frames Jquery
-// https://medium.com/@jerryshrestha/tutorial-an-interactive-portfolio-showcase-for-web-projects-998ee228e841
-      $('.portfolio-item__wrapper').click(function(){
-   var titleDiv = $('#iframe-content .demo-title'), //target blank html "preview" div
-       demo_url = $(this).data('demo'), // clicked projects data url
-       demo_title = $(this).data('title'); // clicked projects title
-
-       //place the value inside demo_title class
-       titleDiv.text(demo_title);
-       // iframe HTML markup that will be appended -> grabbed from clicked preview
-var html = '';
-        html += '<div class="iframe-wrapper"><iframe id="demo-iframe" src="'+ demo_url +'">This feature requires inline frames. You have iframes disabled or your browser does not support them.</iframe></div>';
-
-        // Append to Preview iframe and show
-        $('#iframe-content').append(html).show();
-        $('.devices button[data-device-mode]').click(function(){
-  var deviceMode = $(this).data('device-mode'),
-      targetIframe = $('#iframe-content');
-  //add class corresponding to screen size
-  targetIframe.attr('class', deviceMode);
-});
-})
-// close it
-$('.preview-close').click(function(){
-  $('#iframe-content').hide().find('.iframe-wrapper').remove();
-  $('.devices button').removeClass('active');
-  $('#iframe-content').attr('class', '');
-});
-
-
-});
-    </script>
-  
-  </head>
-
-  <body>
-
-<header>
-  <div class="nav-container">
-   <label>
-     <input type='checkbox'>
-     <span class='menu'>
-     <span class='hamburger'></span>
-    </span>
-<nav>
-  <ul>
-    <li class="active"><a href="#home">Home</a></li>
-    <li><a href="#services">What I do</a></li>
-    <li><a href="#about">About Me</a></li>
-    <li class=""><a href="#projects">My Work</a></li>
-    <li class=""><a href="#footer">Contact</a></li>
-  </ul>
-</nav>
-</label>
-</div>
-</header>
-   <div class="intro-bg typography" id="welcome-section">
-  <a href="mailto:mrtthewebd@gmail.com" class="footer__link">
-<div class="logo">
-   <img src="./img/logo.png">
-</div>
-</a>
-    <section class="intro" id="home"> 
-          <div class="intro-nav-container">
-         <ul class="intro-nav">
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-2"><span class="typing-2"></span></div>
+                <div class="text-3"><span class="typing"></span></div>
+                <a href="#" class="link">My Projects</a>
+        <div class="intro-nav-container"> 
+           <ul class="intro-nav">
             <li class="social-list__item"><a class="social-list__link" href="https://github.com/MrTesau"><i class="fab fa-github fa-2x"></i></a></li>
             <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/yoloswagthegod"><i class="fab fa-twitter fa-2x"></i></a></li>
             <li class="social-list__item"><a id="profile-link" target="_blank" class="social-list__link" href="https://www.freecodecamp.org/mrtesau"><i class="fab fa-free-code-camp fa-2x"></i></a>
             </li>
         </ul>
-  </div> 
-        <div class="svg-wrapper">
-         <svg height="60" width="520" xmlns="http://www.w3.org/2000/svg">
-           <rect class="shape" height="60" width="520" />
-           <div class="text-head">Hello There! I am Tayyib Esau</div>
-         </svg>
-       </div>
-        <h1 class="section__subtitle section__subtitle--intro">Freelance Web Developer</h1>
-  
-        <img src="./img/me.jpg" class="intro__img">     
-    </section>
-   </div>
+        </div> 
+     
+              
+        </div>
 
+        <img src="./img/me.jpg" class="profile-image">
+    </section>
   <!-- My Services -->
     <section class="what-i-do " id="services">
         <h2 class="section__title section__title--services">What I Do</h2>
@@ -189,7 +86,7 @@ $('.preview-close').click(function(){
                 </p>
             </div>
             <div class="service">
-                <h3>Front-End Frameworks </h3>
+                <h3>Front End Frameworks </h3>
                 <p class="section__about__me"> Learning javascript was when my love for web development truly began.
                     Quickly however I discovered
                     React and decided
@@ -199,7 +96,7 @@ $('.preview-close').click(function(){
                 </p>
             </div>
             <div class="service">
-                <h3>Backend</h3>
+                <h3>Back End</h3>
                 <p class="section__about__me">As an aspiring full stack developer I have some experience with backend
                     systems.
                     My portfolio includes courses and projects I have completed using node.js (express) as well as
@@ -210,12 +107,16 @@ $('.preview-close').click(function(){
         <a href="#projects" class="btn">See my work</a>
     </section>
  <!-- About Me -->
-  <div class="about-me-bg">
-<section class="about-me" id="about">
-        <h2 class="section__title section__title--about"><!-- Who I am--></h2>
-        <p class="section__subtitle section__subtitle--about">About Me & Previous Work History</p>
-        <div class="about-me__body">
-            <p>
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">About me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="img/who.jpg" alt="family-graduation">
+                </div>
+                <div class="column right">
+                    <div class="text"><span class="typing-3"></span></div>
+                      <p>
                 After attending high school at Kaipara College, I travelled to South Africa and completed a year of
                 community
                 work at Vista High School.
@@ -233,13 +134,16 @@ $('.preview-close').click(function(){
                 Completing several online courses I eventually found and learnt to love JavaScript and in particular the
                 library/framework REACT.
             </p>
+            <br>
             <h4> Previous Position: May 2018 – October 2020: <br>
                 Research and Development Drillers Assistant, Flexidrill Palmerston
             </h4>
+            <br>
             <p>
                 My responsibilities include trialling innovative new mineral exploration solutions for future production.
                 This consisted of testing in both controlled environments and in the field as well as:
               <br>
+               <br>
               <ul>
                 <li> Collection, measurement, recording and presentation of mineral core samples
                 in conjunction with a team of geologists for a possible future mineral extraction site.</li>
@@ -248,85 +152,156 @@ $('.preview-close').click(function(){
                  information(excel).</li>
                <li> General maintenance of site machinery, rigs, solids removal units, drilling rods, pumps and platforms.</li>
                 <ul>
-            </p>
+            </p> <a href="#">Download Resume</a>
+                </div>
+            </div>
         </div>
-        <img src="https://mrtwebd.netlify.app/img/who1.jpg" class="about-me__img">
     </section>
-  </div>
+ 
+         
 
 <section id="projects"> 
-
 <div class="projects-subtitle">
- <h1 class="section__subtitle">A selection of my projects</h1>
+ <h3 class="section__subtitle">A Collection of Personal and Professional Projects </h3>
 </div>
+
 
 <div class="container">
   <div class="row">
 
    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
+     <a href="https://heads-up-react-placeholder.vercel.app/auth/login-page" target="_blank">
+      <div class="portfolio-item__wrapper">
         <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
+          <img src="./img/React-heads.gif">
           <span class="quick-view">
              <span class="quick-demo">Preview</span>
           </span>
         </div>
         <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
+          <a href="https://heads-up-react-placeholder.vercel.app/auth/login-page" target="_blank">
+             <h2>Employee Wellness Manager Web Application: React, Node.js & MySql.<emph>Not</emph> Mobile Responsive.</h2>
+          </a>
         </div>
       </div>
+      </a>
     </div>
-    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
-        <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
-          <span class="quick-view">
-             <span class="quick-demo">Preview</span>
-          </span>
-        </div>
-        <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <div class="portfolio-item__wrapper" data-demo="https://quote-machine-no-server.vercel.app/" data-title="React: Random Quote Machine">
-        <div class="portfolio-item__demo">
-          <img src="./img/quote-preview.gif">
-          <span class="quick-view">
-             <span class="quick-demo">Preview</span>
-          </span>
-        </div>
-        <div class="portfolio-item__title">
-          <h2>React: Random Quote Machine</h2>
-        </div>
-      </div>
-    </div>
-  </div> 
-</div>
 
-<div id="iframe-content" style="display: none;">
-  <div class="iframe-title">
-    <div class="demo-title"></div>
-    <div class="devices-wrapper">
-      <div class="devices">
-        <button type="button" class="preview-desktop" data-device-mode="desktop"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M3 2h14c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1h-5v2h2c.55 0 1 .45 1 1v1H5v-1c0-.55.45-1 1-1h2v-2H3c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm13 9V4H4v7h12zM5 5h9L5 9V5z"/></g></svg></button>
-        <button type="button" class="preview-tablet" data-device-mode="tablet">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M4 2h12c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm11 14V4H5v12h10zM6 5h6l-6 5V5z"/></g></svg>
-        </button>
-        <button type="button" class="preview-mobile" data-device-mode="mobile">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M6 2h8c.55 0 1 .45 1 1v14c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm7 12V4H7v10h6zM8 5h4l-4 5V5z"/></g></svg>
-        </button>
-        <button type="button" class="preview-close">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"/></g></svg>
-        </button>
+     <div class="portfolio-item">
+        <a href="https://quote-machine-no-server.vercel.app/" target="_blank">
+      <div class="portfolio-item__wrapper" >
+        <div class="portfolio-item__demo">
+          <img src="./img/quote-preview.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+        <a href="https://quote-machine-no-server.vercel.app/" target="_blank"><h2>Simple Quote Generator: React, Node.js, MongoDB/Mongoose</h2>
+          </a>
+        </div>
       </div>
+      </a>
     </div>
-  </div>
-  <div class="site-loading">
-    <h3>Preview Loading...</h3>
-  </div>
-</div>
+
+  
+    <div class="portfolio-item">
+    <a href="https://react-calculator-rho.vercel.app/" target="_blank">
+      <div class="portfolio-item__wrapper">
+        <div class="portfolio-item__demo">
+          <img src="./img/react-calculator.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+          </a>
+        </div>
+        <div class="portfolio-item__title">
+           <a href="https://react-calculator-rho.vercel.app/" target="_blank">
+             <h2>Basic React Built Calculator: React, Javascript, CSS Grid & Flexbox</h2>
+          </a>
+        </div>
+      </div>
+      </a>
+    </div>
+   
+
+      <div class="portfolio-item">
+             <a href="https://codepen.io/mrtesau/full/WNroNNx" target="_blank">
+      <div class="portfolio-item__wrapper" data-demo="https://www.google.com/" data-title="Title for this item">
+        <div class="portfolio-item__demo">
+          <img src="./img/pom-clock.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+        </div>
+        <div class="portfolio-item__title">
+         <a href="https://codepen.io/mrtesau/full/WNroNNx" target="_blank">
+           <h2>React Built Pomodoro Clock: React, Javascript, CSS Grid & Flexbox</h2>
+          </a>
+        </div>
+      </div>
+      </a>
+    </div>
+
+ <div class="portfolio-item">
+    <a href="https://codepen.io/mrtesau/full/abddNOR" target="_blank">
+      <div class="portfolio-item__wrapper">
+        <div class="portfolio-item__demo">
+          <img src="./img/markdown-prev.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+          </a>
+        </div>
+        <div class="portfolio-item__title">
+           <a href="https://codepen.io/mrtesau/full/abddNOR" target="_blank">
+             <h2>React Markdown Previewr: React, Javascript, CSS </h2>
+          </a>
+        </div>
+      </div>
+      </a>
+    </div>
+
+     <div class="portfolio-item">
+    <a href="https://codepen.io/mrtesau/full/BajWJNK/" target="_blank">
+      <div class="portfolio-item__wrapper">
+        <div class="portfolio-item__demo">
+          <img src="./img/drum.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+          </a>
+        </div>
+        <div class="portfolio-item__title">
+           <a href="https://codepen.io/mrtesau/full/BajWJNK/" target="_blank">
+             <h2>React Built Interactive Drum Machine: React, Javascript, CSS Grid & Flexbox</h2>
+          </a>
+        </div>
+      </div>
+      </a>
+    </div>
+
+     <div class="portfolio-item">
+    <a href="https://repl.it/@MrTesau" target="_blank">
+      <div class="portfolio-item__wrapper">
+        <div class="portfolio-item__demo">
+          <img src="./img/node-preview.gif">
+          <span class="quick-view">
+             <span class="quick-demo">Preview</span>
+          </span>
+          </a>
+        </div>
+        <div class="portfolio-item__title">
+           <a href="https://repl.it/@MrTesau" target="_blank">
+             <h2>Collection of Back End Microservice Projects: Node.js, MongoDB, Mongoose</h2>
+          </a>
+        </div>
+      </div>
+      </a>
+    </div>
+
+</div> 
+</div> 
 <!--
 <div class="container">
   <div class="row">
@@ -466,7 +441,7 @@ $('.preview-close').click(function(){
 
 </div> 
 -->
-</div> 
+
 
 <div class="projects-subtitle">
  <h3 class="section__subtitle">More Projects Coming Soon...</h3>
@@ -474,6 +449,7 @@ $('.preview-close').click(function(){
   </section>
  <footer class="footer" id="footer">
         <a href="mailto:mrtthewebd@gmail.com" class="footer__link">MrTtheWebD@gmail.com</a>
+        <br>
         <br>
         <a href="./resume.pdf" target="_blank"  download="newfilename">Click to View My Resume</a>
         
@@ -486,6 +462,7 @@ $('.preview-close').click(function(){
             </li>
         </ul>
  </footer>
+  <script src="script.js"></script>
   </body>
 </html>
 
