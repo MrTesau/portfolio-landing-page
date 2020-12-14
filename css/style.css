@@ -876,6 +876,7 @@ section .title {
    font-family: "Lato", sans-serif !important;
   text-align: center;
   padding: 3.5em 0;
+  border-top: 2px solid grey;
 }
 .footer a {
   color: inherit;
