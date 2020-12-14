@@ -529,8 +529,8 @@ section .title {
     height: 350px;
     width: 450px;
     object-fit: cover;
-     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.55),
-    0.125em 0.125em 0.125em rgba(0, 0, 0, 0.55);
+     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.35),
+    0.125em 0.125em 0.125em rgba(0, 0, 0, 0.35);
 }
 .about .about-content .right{
     width: 60%;
@@ -541,7 +541,7 @@ section .title {
     margin-bottom: 5px;
 }
 .about .about-content .right .text span{
-    color: crimson;
+    color: #009900;
 }
 .about .about-content .right p{
     text-align: justify;
