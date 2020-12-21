@@ -639,7 +639,7 @@ section .title {
     margin-top: 0;
   }
   .about .max-width {
-    max-width: 95vw;
+    max-width: 100vw;
     padding: 10px;
     margin: auto;
   }
