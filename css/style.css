@@ -633,6 +633,7 @@ section .title {
 }
 
 /* large Screens  About ME section */
+
 @media (min-width: 1000px) {
   .about {
     padding: 30px 0 !important;
@@ -695,12 +696,12 @@ section .title {
   }
   .about .about-content .right p {
     text-align: left;
-    font-size: 15px !important;
+    font-size: 12px !important;
   }
   .about .about-content .right ul {
     text-align: left;
     list-style: initial;
-    font-size: 15px !important;
+    font-size: 12px !important;
   }
 
   .about .about-content .right a {
@@ -718,6 +719,17 @@ section .title {
   .about .about-content .right a:hover {
     color: black;
     background: none;
+  }
+}
+@media (min-width: 1280px) {
+   .about .about-content .right p {
+
+    font-size: 15px !important;
+  }
+  .about .about-content .right ul {
+  
+
+    font-size: 15px !important;
   }
 }
 /***** Projects ******/
