@@ -672,8 +672,8 @@ section .title {
 
   }
   .about .about-content .left img {
-    height: 350px;
-    width: 350px;
+    height: 150px;
+    width: 300px;
     object-fit: cover;
     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.35),
       0.125em 0.125em 0.125em rgba(0, 0, 0, 0.35);
@@ -728,7 +728,7 @@ section .title {
   }
   .about .about-content .right ul {
   
-
+    list-style: initial;
     font-size: 15px !important;
   }
 }
@@ -807,6 +807,7 @@ section .title {
   text-decoration: none;
   color: #1a1e23;
 }
+/* about Med Screens */
 @media (min-width: 700px) {
   .row {
     display: flex;
@@ -821,6 +822,7 @@ section .title {
     min-width: 33%;
   }
 }
+/* About LArge Screens */
 @media (min-width: 1280px) {
   .row {
     display: flex;
@@ -835,6 +837,10 @@ section .title {
     min-width: 20%;
     max-width: 20%;
   }
+    .about .about-content .left img {
+    height: 350px;
+    width: 450px;
+    }
 }
 /* Footer */
 .footer {
